@@ -1,0 +1,58 @@
+
+<body>
+<div>
+      
+
+    
+<div>
+    
+    <button 
+    type="button" class="btn btn-outline-secondary" 
+    ngbPopover="Click courses listed below to check course detail" 
+    triggers="mouseenter:mouseleave">
+        Available Courses
+    </button>
+    <div style="margin-top:3vh">
+
+        <ngb-accordion animation= "true" type = "light" #acc="ngbAccordion" *ngFor = "let class of courses">
+            <ngb-panel title={{class.name}}>
+                <ng-template ngbPanelContent>
+                    <ul>
+                    <div class = "d-flex justify-content-between">
+                    
+                    <li ><strong>Class Name</strong>: {{class.name}}</li>
+                    <li><strong>Instructor:</strong> {{class.instructor}}</li>
+                    <li ><strong>Contact Information:</strong> {{class.phone_number}}</li>
+                    <li>Rating:<ngb-rating [rate]=class.rate></ngb-rating></li>
+                    </div>
+                </ul>
+                </ng-template>
+            </ngb-panel>
+        </ngb-accordion>
+      
+    </div>
+
+    <div style="margin-top:5vh">
+        <button 
+        type="button" class="btn btn-outline-secondary" 
+        ngbPopover="Enrollment percentage for each course are listed below" 
+        triggers="mouseenter:mouseleave">
+        Enrollment Percentage
+    </button>
+
+        <div style="margin-top: 3vh">
+            <div  style = "margin-bottom: 1vh" *ngFor = "let class of courses">
+                <ngb-progressbar type="success" [value]=class.enrollPercent><i>{{class.enrollPercent}} %</i></ngb-progressbar>
+                <p>{{class.name}}</p>
+            </div>
+            
+        </div>
+    </div>
+        
+      
+</div>
+
+ </div>
+
+</body>
+

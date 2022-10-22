@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color:lightgray;
+    font-family:monospace;
+}
+
+body{
+    margin-top:5%;
+}
